@@ -15,4 +15,8 @@ print(f"{x} * {y} = {tulo(x, y)}")
 
 logger("lopetetaan ohjelma")
 print("goodbye!")
+<<<<<<< HEAD
 #
+=======
+#.
+>>>>>>> eb13237 (viikko2 tehtävä 9: muutos kloonissa)
