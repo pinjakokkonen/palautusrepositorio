@@ -49,6 +49,29 @@ Register With Username That Is Already In Use
     Click Button  Register
     Page Should Contain  User with username kalle already exists
 
+Login After Successful Registration
+    Set Username  maija
+    Set Password  maija123
+    Set Password Confirmation  maija123
+    Click Button  Register
+    Click Link  Continue to main page
+    Click Button  Logout
+    Set Username  maija
+    Set Password  maija123
+    Click Button  Login
+    Login Should Succeed
+
+Login After Failed Registration
+    Set Username  m
+    Set Password  maija123
+    Set Password Confirmation  maija123
+    Click Button  Register
+    Click Link  Login
+    Set Username  m
+    Set Password  maija123
+    Click Button  Login
+    Page Should Contain  Invalid username or password
+
 *** Keywords ***
 Reset Application Create User And Go To Register Page
   Reset Application
@@ -69,3 +92,6 @@ Set Password Confirmation
 
 Register Should Succeed
     Title Should Be  Welcome to Ohtu Application!
+
+Login Should Succeed
+    Main Page Should Be Open
